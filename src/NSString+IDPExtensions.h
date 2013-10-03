@@ -14,4 +14,15 @@
 
 - (NSString *)urlEncode;
 
+- (BOOL)isEqualToStringWithoutWhitespace:(NSString *)aString;
+- (BOOL)isEmpty;
+- (BOOL)containString:(NSString *)substring;
+- (BOOL)containsStringWithCaseInsensitive:(NSString *)substring;
+
+- (NSString *)removeEntryOfStrings:(NSArray *)entries;
+- (NSString *)removeEntryOnBeginAndEnd:(NSArray *)entries;
+- (BOOL)isAllDigits;
+
+- (BOOL)containWord:(NSString *)word;
+
 @end

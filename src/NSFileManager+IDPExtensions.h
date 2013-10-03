@@ -33,4 +33,7 @@ typedef enum {
 
 + (BOOL)fileName:(NSString *)fileName existsInDirectory:(NSString *)directoryPath;
 
+//Return uniquely named temporary directory from template
++ (NSString *)temporaryFolderInDirectory:(NSString *)directoryPath forTemplate:(NSString *)templateString;
+
 @end

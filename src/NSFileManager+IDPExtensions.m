@@ -38,6 +38,22 @@
     return result;
 }
 
++ (NSString *)pathForAppFolder:(NSString *)appFolderPath inDirectory:(IDPDirectoryPath)directoryPath {
+    NSString *result = [self directoryPathForPath:directoryPath];
+    
+    result = [result stringByAppendingPathComponent:appFolderPath];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    
+    if (![manager fileExistsAtPath:result]) {
+        [manager createDirectoryAtPath:result
+           withIntermediateDirectories:YES
+                            attributes:nil
+                                 error:NULL];
+    }
+    
+    return result;
+}
+
 + (NSString *)documentsDirectoryPath {
 	static NSString *__docsDirectory = nil;
 	
@@ -73,7 +89,7 @@
                         attributes:nil
                              error:NULL];
     
-	return __applicationDataDirectory;	
+	return __applicationDataDirectory;
 }
 
 + (BOOL)fileNameExistsInDocumentsDirectory:(NSString *)fileName {
@@ -81,7 +97,7 @@
 }
 
 + (BOOL)fileNameExistsInLibraryDirectory:(NSString *)fileName {
-	return [self fileName:fileName existsInDirectory:[self libraryDirectoryPath]];	
+	return [self fileName:fileName existsInDirectory:[self libraryDirectoryPath]];
 }
 
 + (BOOL)fileNameExistsInBundleDirectory:(NSString *)fileName {
@@ -94,6 +110,26 @@
 
 + (BOOL)fileName:(NSString *)fileName existsInDirectory:(NSString *)directoryPath {
 	return [[NSFileManager defaultManager] fileExistsAtPath:[directoryPath stringByAppendingPathComponent:fileName]];
+}
+
++ (NSString *)temporaryFolderInDirectory:(NSString *)directoryPath forTemplate:(NSString *)templateString {
+    NSString *tempDirectoryTemplate = [directoryPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.XXXXXX", templateString]];
+    
+    const char *tempDirectoryTemplateCString = [tempDirectoryTemplate fileSystemRepresentation];
+    
+    char *tempDirectoryNameCString = (char *)malloc(strlen(tempDirectoryTemplateCString) + 1);
+    
+    strcpy(tempDirectoryNameCString, tempDirectoryTemplateCString);
+    
+    char *result = mkdtemp(tempDirectoryNameCString);
+    if (!result)
+    {
+        // handle directory creation failure
+    }
+    
+    NSString *tempDirectoryPath = [[NSFileManager defaultManager] stringWithFileSystemRepresentation:tempDirectoryNameCString length:strlen(result)];
+    free(tempDirectoryNameCString);
+    return tempDirectoryPath;
 }
 
 @end
