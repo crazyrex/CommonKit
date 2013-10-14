@@ -16,7 +16,8 @@ typedef void (^IDPArrayObjectsEnumerationBlock)(id obj, NSUInteger idx, BOOL *st
 
 @interface NSArray (IDPExtensions)
 
-- (id)firstObject;
+- (id)randomObject;
+- (NSArray *)shuffledArray;
 
 @end
 
