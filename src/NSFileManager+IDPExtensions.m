@@ -58,7 +58,7 @@
 	static NSString *__docsDirectory = nil;
 	
 	if (nil == __docsDirectory) {
-		__docsDirectory = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] retain];
+		__docsDirectory = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] retain];
 	}
 	return __docsDirectory;
 }
@@ -67,7 +67,7 @@
 	static NSString *__libraryDirectory = nil;
 	
 	if (nil == __libraryDirectory) {
-		__libraryDirectory = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] retain];
+		__libraryDirectory = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] retain];
 	}
 	return __libraryDirectory;
 }
@@ -80,7 +80,7 @@
 	static NSString *__applicationDataDirectory = nil;
 	
 	if (nil == __applicationDataDirectory) {
-		__applicationDataDirectory = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] retain];
+		__applicationDataDirectory = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject] retain];
 	}
     
     NSFileManager *manager = [NSFileManager defaultManager];
