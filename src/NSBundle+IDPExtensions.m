@@ -23,6 +23,10 @@
 	return [[NSBundle mainBundle] loadClass:theClass fromNibNamed:theNibName owner:theOwner options:options];
 }
 
++ (NSString *)pathForResource:(NSString *)name ofType:(NSString *)extension {
+    return [[NSBundle mainBundle] pathForResource:name ofType:extension];
+}
+
 - (id)loadClass:(Class)theClass fromDefaultNibWithOwner:(id)theOwner {
 	return [self loadClass:theClass fromNibNamed:NSStringFromClass(theClass) owner:theOwner options:nil];
 }

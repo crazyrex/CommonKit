@@ -13,6 +13,7 @@
 + (id)loadClass:(Class)theClass fromDefaultNibWithOwner:(id)theOwner;
 + (id)loadClass:(Class)theClass fromNibNamed:(NSString *)theNibName owner:(id)theOwner;
 + (id)loadClass:(Class)theClass fromNibNamed:(NSString *)theNibName owner:(id)theOwner options:(NSDictionary *)options;
++ (NSString *)pathForResource:(NSString *)name ofType:(NSString *)extension;
 
 - (id)loadClass:(Class)theClass fromDefaultNibWithOwner:(id)theOwner;
 - (id)loadClass:(Class)theClass fromNibNamed:(NSString *)theNibName owner:(id)theOwner;
