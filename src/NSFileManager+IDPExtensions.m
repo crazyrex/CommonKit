@@ -8,6 +8,8 @@
 
 #import "NSFileManager+IDPExtensions.h"
 
+#import "NSArray+IDPExtensions.h"
+
 
 @implementation NSFileManager (IDPExtensions)
 

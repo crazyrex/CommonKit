@@ -8,6 +8,12 @@
 
 #import "NSArray+IDPExtensions.h"
 
+@interface NSArray (IDPPrivateExtensions)
+
+- (NSUInteger)randomWithCount:(NSUInteger)count;
+
+@end
+
 @implementation NSArray (IDPExtensions)
 
 - (id)randomObject {
@@ -23,6 +29,10 @@
         [array removeObjectAtIndex:index];
     }
     return  shuffle;
+}
+
+- (id)firstObject {
+	return [self objectAtIndex:0];
 }
 
 - (NSUInteger)randomWithCount:(NSUInteger)count {
