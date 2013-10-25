@@ -8,4 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Generate a random number between min and max - 1
+ */
 NSInteger RandomNumberInRange(NSInteger min, NSInteger max);
