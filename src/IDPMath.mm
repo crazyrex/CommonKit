@@ -9,5 +9,5 @@
 #import "IDPMath.h"
 
 NSInteger RandomNumberInRange(NSInteger min, NSInteger max) {
-    return arc4random_uniform(max) + min;
+    return arc4random_uniform(max - min) + min;
 }
