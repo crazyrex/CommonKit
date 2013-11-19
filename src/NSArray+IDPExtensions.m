@@ -35,7 +35,10 @@
 }
 
 - (id)firstObject {
-	return [self objectAtIndex:0];
+    if (self.count) {
+        return [self objectAtIndex:0];
+    }
+    return nil;
 }
 
 - (NSUInteger)randomWithCount:(NSUInteger)count {
