@@ -17,6 +17,9 @@
 @implementation NSArray (IDPExtensions)
 
 - (id)randomObject {
+    if (![self count]) {
+        return nil;
+    }
      return [self objectAtIndex:[self randomWithCount:[self count]]];
 }
 
