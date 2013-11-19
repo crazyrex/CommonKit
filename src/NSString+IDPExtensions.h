@@ -20,7 +20,6 @@
 - (BOOL)containsStringWithCaseInsensitive:(NSString *)substring;
 
 - (NSString *)removeEntryOfStrings:(NSArray *)entries;
-- (NSString *)removeEntryOnBeginAndEnd:(NSArray *)entries;
 - (BOOL)isAllDigits;
 
 - (BOOL)containWord:(NSString *)word;

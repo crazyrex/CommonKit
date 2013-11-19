@@ -18,8 +18,7 @@
     CFStringRef stringRef = CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                     (CFStringRef)self,
                                                                     NULL,
-#warning missing ':' symbol
-                                                                    (CFStringRef)@"!*'();@&=+$,/?%#[]",
+                                                                    (CFStringRef)@"!*'();:@&=+$,/?%#[]",
                                                                     kCFStringEncodingUTF8);
     NSString *string = (NSString *)stringRef;
     [[string retain] autorelease];
