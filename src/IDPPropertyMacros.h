@@ -10,4 +10,5 @@
 #define IDPNonatomicCopyPropertySynthesize(ivar, newObj) do{if(ivar!=newObj){[ivar release];ivar=[newObj copy];}}while(0)
 #define IDPNonatomicAssignPropertySynthesize(ivar, newObj) do{ivar=newObj;}while(0)
 
+#define IDPNonatomicRetainPropertySynthesizeWithObserver(ivar, newObj) do{if(ivar!=newObj){[ivar removeObserver:self];[ivar release];ivar=[newObj retain];[ivar addObserver:self];}}while(0)
 
