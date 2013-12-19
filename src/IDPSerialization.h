@@ -10,7 +10,10 @@
 
 @protocol IDPSerialization <NSObject>
 
-// this method returns the serialized string from current object
+/** 
+ This method returns the serialized string from current object.
+ @return This method returns the serialized string from current object.
+*/
 - (NSString *)serialize;
 
 @end

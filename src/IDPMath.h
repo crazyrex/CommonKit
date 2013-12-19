@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 /**
- Generate a random number between min and max - 1
+ Generate a random number in range min and max - 1.
+ @param min
+        The min digit in range.
+ @param max
+        The max digit in range.
+ @return Digit in range from min to (max-1).
  */
 NSInteger RandomNumberInRange(NSInteger min, NSInteger max);
