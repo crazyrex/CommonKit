@@ -48,9 +48,6 @@
 }
 
 - (BOOL)containString: (NSString*) substring {
-    if ([self isEqualToString:@"A TEXT DOCUMENT ON A WORD PROCESSOR..."]) {
-        NSLog(@"");
-    }
     NSRange range = [self rangeOfString : substring];
     BOOL found = ( range.location != NSNotFound );
     return found;
