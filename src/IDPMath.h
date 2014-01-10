@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+#define DEGREES_TO_RADIANS(degrees) ((degrees) * (M_PI / 180))
+
 /**
  Generate a random number in range min and max - 1.
  @param min
