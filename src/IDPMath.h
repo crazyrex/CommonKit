@@ -19,4 +19,4 @@
         The max digit in range.
  @return Digit in range from min to (max-1).
  */
-NSInteger RandomNumberInRange(NSInteger min, NSInteger max);
+NSInteger IDPRandomNumberInRange(NSInteger min, NSInteger max);

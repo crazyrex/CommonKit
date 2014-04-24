@@ -8,6 +8,6 @@
 
 #import "IDPMath.h"
 
-NSInteger RandomNumberInRange(NSInteger min, NSInteger max) {
+NSInteger IDPRandomNumberInRange(NSInteger min, NSInteger max) {
     return arc4random_uniform(max - min) + min;
 }
