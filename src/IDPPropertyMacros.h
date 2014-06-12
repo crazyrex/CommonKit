@@ -12,3 +12,11 @@
 
 #define IDPNonatomicRetainPropertySynthesizeWithObserver(ivar, newObj) do{if(ivar!=newObj){[ivar removeObserver:self];[ivar release];ivar=[newObj retain];[ivar addObserver:self];}}while(0)
 
+#define IDPViewControllerViewOfClassGetterSynthesize(theClass, getterName) \
+            - (theClass *)getterName { \
+                            if ([self.view isKindOfClass:[theClass class]]) { \
+                                return (theClass *)self.view; \
+                            } \
+                            return nil; \
+                        }
+
