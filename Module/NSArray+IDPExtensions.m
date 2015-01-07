@@ -46,19 +46,3 @@
 }
 
 @end
-
-@implementation NSMutableArray (IDPExtensions)
-
-+ (NSMutableArray *)weakArray {
-    return [IDPMutableWeakArray array];
-}
-
-+ (NSMutableArray *)observableArray {
-    return [IDPKVOMutableArray array];
-}
-
-+ (NSMutableArray *)observableArrayWithArray:(NSArray *)array {
-    return [IDPKVOMutableArray arrayWithArray:array];
-}
-
-@end
